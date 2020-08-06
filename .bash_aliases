@@ -70,12 +70,12 @@ back() {
 alias b='back'
 
 # Shortcut to commonly used directories
-alias ~='cd ~'
-alias h='cd ~'
+alias ~='cd ~' # Change to the user's home direcotry (~)
+alias h='cd ~' # Change to the user's home direcotry (~)
 alias archive='cd ~/archive/'
 alias bin='cd ~/bin/'
 alias docs='cd ~/docs/'
-alias home='cd /home/' #change to the literal /home/ directory
+alias home='cd /home/' # Change to the literal /home/ directory
 alias log='cd /var/log/'
 alias www='cd /var/www/'
 alias html='cd /var/www/html/'
@@ -132,7 +132,7 @@ alias listusers='getent passwd'
 alias listgroup='getent group'
 
 # Check to see what members are part of a group.
-# Usage: 'members staff' to see a list of members belonging to group staff
+# Usage: 'members staff' to see a list of members belonging to a group called staff
 members() {
   dscl . -list /Users | while read user;
   do printf "$user ";
@@ -182,7 +182,7 @@ HISTFILE=/dev/null
 #========================================
 # ADD ~/BIN TO PATH
 #========================================
-# Check for ~/bin/ directory of current user and prepends to $PATH
+# Check for ~/bin/ directory of current user and prepend to $PATH
 if [ -d $(eval echo "~$different_user")/bin ]; then
   PATH="$(eval echo \"~$different_user\")/bin:$PATH"
 fi
