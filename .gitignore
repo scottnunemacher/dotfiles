@@ -8,4 +8,5 @@
 !.bash_aliases
 
 # Track these folders (and everything in them *)
-!/bin/*
+!bin/
+!bin/*
