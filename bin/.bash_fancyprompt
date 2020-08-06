@@ -1,0 +1,48 @@
+# ANSI Color Codes:
+# https://en.wikipedia.org/wiki/ANSI_escape_code
+# UTF-8 Encoding to octal (\000):
+# https://en.wikipedia.org/wiki/UTF-8
+
+BLACK="\[\033[30m\]"         # foreground black
+RED="\[\033[31m\]"           # foreground red
+GREEN="\[\033[32m\]"         # foreground green
+YELLOW="\[\033[33m\]"        # foreground yellow
+BLUE="\[\033[34m\]"          # foreground blue
+MAGENTA="\[\033[35m\]"       # foreground magenta
+CYAN="\[\033[36m\]"          # foreground cyan
+WHITE="\[\033[37m\]"         # foreground white
+
+BGBLACK="\[\033[40m\]"       # background black
+BGRED="\[\033[41m\]"         # background red
+BGGREEN="\[\033[42m\]"       # background green
+BGYELLOW="\[\033[43m\]"      # background yellow
+BGBLUE="\[\033[44m\]"        # background blue
+BGMAGENTA="\[\033[45m\]"     # background magenta
+BGCYAN="\[\033[46m\]"        # background cyan
+BGWHITE="\[\033[47m\]"       # background white
+
+# Check if root else reg user
+if [[ ${EUID} == 0 ]] ; then
+    FRAME="${RED}";
+    COLORDATETIME="${RED}";
+    COLORWHO="${RED}";
+    COLORPWD="${GREEN}";
+    PASS="${GREEN}";
+    FAIL="${RED}";
+    PERM="${RED} #";
+else
+    FRAME="${YELLOW}";
+    COLORDATETIME="${YELLOW}";
+    COLORWHO="${YELLOW}";
+    COLORPWD="${GREEN}";
+    PASS="${GREEN}";
+    FAIL="${RED}";
+    PERM="${GREEN} $";
+fi
+
+PS1="\n$FRAME\342\224\214\342\224\200\$(if [[ \$? == 0 ]]; then echo \"✅\"; else echo \"🔥\";fi)$FRAME\342\224\200[$COLORWHO\h$FRAME]\n\342\224\234\342\224\200[$COLORPWD\w$FRAME]\n\342\224\224\342\224\200>$PERM$RESET "
+
+unset FRAME;
+unset PASS;
+unset FAIL;
+unset PERM;
