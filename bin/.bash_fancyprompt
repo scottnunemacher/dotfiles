@@ -31,7 +31,6 @@ if [[ ${EUID} == 0 ]] ; then
     COLORPWD="${GREEN}";
     PASS="${GREEN}";
     FAIL="${RED}";
-    PERM="${RED} #";
 else
     FRAME="${YELLOW}";
     COLORDATETIME="${YELLOW}";
@@ -39,12 +38,10 @@ else
     COLORPWD="${GREEN}";
     PASS="${GREEN}";
     FAIL="${RED}";
-    PERM="${GREEN} $";
 fi
 
-PS1="\n$FRAME\342\224\214\342\224\200\$(if [[ \$? == 0 ]]; then echo \"✅\"; else echo \"🔥\";fi)$FRAME\342\224\200[$COLORWHO\h$FRAME]\n\342\224\234\342\224\200[$COLORPWD\w$FRAME]\n\342\224\224\342\224\200>$PERM$RESET "
+PS1="\n$FRAME\342\224\214\342\224\200\$(if [[ \$? == 0 ]]; then echo \"✅\"; else echo \"🔥\";fi)$FRAME\342\224\200[$COLORWHO\u@\H$FRAME]\342\224\200[$COLORDATETIME\d \t$FRAME]\n\342\224\234\342\224\200[$COLORPWD\w$FRAME]\n\342\224\224\342\224\200> \$$RESET "
 
 unset FRAME;
 unset PASS;
 unset FAIL;
-unset PERM;
