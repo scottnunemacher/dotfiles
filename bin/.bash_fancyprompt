@@ -3,6 +3,8 @@
 # UTF-8 Encoding to octal (\000):
 # https://en.wikipedia.org/wiki/UTF-8
 
+RESET='\e[0m'                # reset color
+
 BLACK="\[\033[30m\]"         # foreground black
 RED="\[\033[31m\]"           # foreground red
 GREEN="\[\033[32m\]"         # foreground green
