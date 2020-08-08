@@ -1,24 +1,24 @@
 # .bash_fancyprompt
 # see: https://en.wikipedia.org/wiki/ANSI_escape_code#Escape_sequences
 
-RESET='\e[0m'                # color reset
+RESET='\033[0m'                # color reset
 
 # Original foreground color range: (8 colors)
-BLACK="\e[30m"               # foreground black
-RED="\e[31m"                 # foreground red
-GREEN="\e[32m"               # foreground green
-YELLOW="\e[33m"              # foreground yellow
-BLUE="\e[34m"                # foreground blue
-MAGENTA="\e[35m"             # foreground magenta
-CYAN="\e[36m"                # foreground cyan
-WHITE="\e[37m"               # foreground white
+BLACK="\033[30m"               # foreground black
+RED="\033[31m"                 # foreground red
+GREEN="\033[32m"               # foreground green
+YELLOW="\033[33m"              # foreground yellow
+BLUE="\033[34m"                # foreground blue
+MAGENTA="\033[35m"             # foreground magenta
+CYAN="\033[36m"                # foreground cyan
+WHITE="\033[37m"               # foreground white
 
 # Expanded foreground color range (216 colors)
 # only a few self-named colors are chosen and displayed here
-DKBLUE="\e[38;5;27m"         # foreground dark blue
-LIME="\e[38;5;40m"           # foreground bright green
-PURPLE="\e[38;5;57m"         # foreground purple
-ORANGE="\e[38;5;208m"        # foreground orange
+DKBLUE="\033[38;5;27m"         # foreground dark blue
+LIME="\033[38;5;40m"           # foreground bright green
+PURPLE="\033[38;5;57m"         # foreground purple
+ORANGE="\033[38;5;208m"        # foreground orange
 
 # Check if root else reg user
 if [[ ${EUID} == 0 ]] ; then
