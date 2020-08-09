@@ -100,17 +100,21 @@ alias t='tmux'
 g() {
   git "$@";
 }
+# git fetch function with params
+gf() {
+  git fetch "$@";
+}
 # git status function with params
-gits() {
+gst() {
   git status "$@";
 }
 # git log function with params
-gitl() {
+gl() {
   git log "$@";
 }
-# git fetch function with params
-gitf() {
-  git fetch "$@";
+# git show function with params
+gsh() {
+  git show "$@";
 }
 
 #-------------------------
