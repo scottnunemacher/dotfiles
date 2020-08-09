@@ -24,8 +24,8 @@ ORANGE="\033[38;5;208m"        # foreground orange
 if [[ ${EUID} == 0 ]] ; then
     FRAME="${RED}";
     COLORDATETIME="${RED}";
-    COLORWHO="${PURPLE}";
-    COLORWHERE="${PURPLE}";
+    COLORWHO="${DKBLUE}";
+    COLORWHERE="${DKBLUE}";
     COLORPWD="${LIME}";
     PERMS="${RED} # ";
 else
