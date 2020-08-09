@@ -16,25 +16,29 @@ WHITE="\033[37m"               # foreground white
 # Expanded foreground color range (216 colors)
 # only a few self-named colors are chosen and displayed here
 DKBLUE="\033[38;5;27m"         # foreground dark blue
-LIME="\033[38;5;40m"           # foreground bright green
+LIME="\033[38;5;40m"           # foreground lime
+DKRED="\033[38;5;52m"          # foreground dark red
 PURPLE="\033[38;5;57m"         # foreground purple
+BTRED="\033[38;5;196m"         # foreground bright red
 ORANGE="\033[38;5;208m"        # foreground orange
 
 # Check if root else reg user
 if [[ ${EUID} == 0 ]] ; then
     FRAME="${RED}";
-    COLORDATETIME="${PURPLE}";
-    COLORWHO="${PURPLE}";
+    COLORDATETIME="${DKRED}";
+    COLORWHO="${BTRED}";
+    COLORWHERE="${DKRED}";
     COLORPWD="${LIME}";
     PERMS="${RED} # ";
 else
     FRAME="${YELLOW}";
     COLORDATETIME="${LIME}";
     COLORWHO="${LIME}";
+    COLORWHERE="${LIME}";
     COLORPWD="${LIME}";
     PERMS="${LIME} $ ";
 fi
 
-PS1="\n$FRAME\342\224\214\342\224\200\$(if [[ \$? == 0 ]]; then echo \"✅\"; else echo \"🔥\";fi)$FRAME\342\224\200[$COLORWHO\u@\H$FRAME]\342\224\200[$COLORDATETIME\d \t$FRAME]\n\342\224\234\342\224\200[$COLORPWD\w$FRAME]\n\342\224\224\342\224\200>$PERMS$RESET"
+PS1="\n$FRAME\342\224\214\342\224\200\$(if [[ \$? == 0 ]]; then echo \"✅\"; else echo \"🔥\";fi)$FRAME\342\224\200[$COLORWHO\u$COLORWHERE@\H$FRAME]\342\224\200[$COLORDATETIME\d \t$FRAME]\n\342\224\234\342\224\200[$COLORPWD\w$FRAME]\n\342\224\224\342\224\200>$PERMS$RESET"
 
 unset FRAME;
