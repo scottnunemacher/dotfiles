@@ -9,6 +9,14 @@ alias mybash='nano ~/.bash_aliases'
   . ~/.bash_aliases;
 }
 
+# Edit .bash_fancyprompt file by running 'fancyprompt'
+alias fancyprompt='nano ~/bin/.bash_fancyprompt'
+
+# Source this .bash_fancyprompt file after modifying it by running '.fancyprompt'.
+.fancyprompt() {
+  . ~/bin/.bash_fancyprompt;
+}
+
 #-------------------------
 # GREP - Grep - Make grep more user-friendly by highlighting matches.
 alias grep='grep --color=auto'
