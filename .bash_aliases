@@ -104,13 +104,13 @@ g() {
 gits() {
   git status "$@";
 }
-# git commit function with params
-gitc() {
-  git commit "$@";
+# git log function with params
+gitl() {
+  git log "$@";
 }
-# git branch function with params
-gitb() {
-  git branch "$@";
+# git fetch function with params
+gitf() {
+  git fetch "$@";
 }
 
 #-------------------------
