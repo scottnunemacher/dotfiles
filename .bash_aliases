@@ -182,6 +182,69 @@ gpg-verify() {
 alias motd='cat /run/motd.dynamic'
 
 #-------------------------
+# FAIL2BAN
+# Read Fail2Ban logs easier
+f2b-group-by-ip() {
+  # Report from all log files, group by IP address
+  awk '($(NF-1) = /Ban/){print $NF}' /var/log/fail2ban.log* | \
+  sort | \
+  uniq -c | \
+  sort -n;
+}
+
+f2b-group-by-ip-and-hostname() {
+  # Group by IP address and hostname
+  awk '($(NF-1) = /Ban/){print $NF,"("$NF")"}' /var/log/fail2ban.log | \
+  sort | \
+  logresolve | \
+  uniq -c | \
+  sort -n;
+}
+
+f2b-group-by-today() {
+  # Group on today's activity
+  grep "Ban " /var/log/fail2ban.log | \
+  grep `date +%Y-%m-%d` | \
+  awk '{print $NF}' | \
+  sort | \
+  awk '{print $1,"("$1")"}' | \
+  logresolve | \
+  uniq -c | \
+  sort -n;
+}
+
+f2b-group-problem-subnets() {
+  # Report problematic subnets
+  zgrep -h "Ban " /var/log/fail2ban.log* | \
+  awk '{print $NF}' | \
+  awk -F\. '{print $1"."$2"."}' | \
+  sort | \
+  uniq -c  | \
+  sort -n | \
+  tail;
+}
+
+f2b-problem-ip-in-subnet-form() {
+  # Focus on problem IP, accepts IP subnet form 255.255.
+  zgrep -c "$@" /var/log/fail2ban.log*;
+}
+
+f2b-summary-of-ban-events-by-day() {
+  zgrep -h "Ban " /var/log/fail2ban.log* | awk '{print $5,$1}' | sort | uniq -c;
+}
+
+f2b-status() {
+  # Check status of fail2ban jails
+  fail2ban-client status;
+}
+
+f2b-status-jail-details() {
+  # Check status of a specific fail2ban jail (ex: sshd)
+  # usage: f2b-status-jail-details sshd
+  fail2ban-client status "$@";
+}
+
+#-------------------------
 #
 
 #========================================
