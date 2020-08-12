@@ -105,19 +105,19 @@ g() {
   git "$@";
 }
 # git fetch function with params
-gf() {
+gfetch() {
   git fetch "$@";
 }
 # git status function with params
-gst() {
+gstat() {
   git status "$@";
 }
 # git log function with params
-gl() {
+glog() {
   git log "$@";
 }
 # git show function with params
-gsh() {
+gshow() {
   git show "$@";
 }
 
