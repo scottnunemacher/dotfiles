@@ -90,6 +90,10 @@ alias html='cd /var/www/html/'
 
 #-------------------------
 # TMUX - Shortcuts
+alias out='logout'
+
+#-------------------------
+# TMUX - Shortcuts
 alias tl='tmux ls'
 alias ta='tmux a'
 alias t='tmux'
