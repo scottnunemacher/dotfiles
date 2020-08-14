@@ -100,29 +100,6 @@ alias ta='tmux a'
 alias t='tmux'
 
 #-------------------------
-# GIT
-# git function with params
-g() {
-  git "$@";
-}
-# git fetch function with params
-gfetch() {
-  git fetch "$@";
-}
-# git status function with params
-gstat() {
-  git status "$@";
-}
-# git log function with params
-glog() {
-  git log "$@";
-}
-# git show function with params
-gshow() {
-  git show "$@";
-}
-
-#-------------------------
 # SSH
 # Edit the ssh config file
 alias sshconfig='nano ~/.ssh/config'
