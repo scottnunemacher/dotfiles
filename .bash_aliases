@@ -87,6 +87,7 @@ alias home='cd /home/' # Change to the literal /home/ directory
 alias log='cd /var/log/'
 alias www='cd /var/www/'
 alias html='cd /var/www/html/'
+alias fail2ban='cd /etc/fail2ban/'
 
 #-------------------------
 # TMUX - Shortcuts
