@@ -233,8 +233,7 @@ gpg-verify() {
 
 #-------------------------
 # SYSTEMD-ANALYZE
-# Analyze system startup time
-# Useful tool to implament in the future
+# Analyze system startup time (for future reference)
 # systemd-analyze
 
 
