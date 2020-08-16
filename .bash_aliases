@@ -237,9 +237,12 @@ wp() {
 # UBUNTU
 # Check Ubuntu Version
 ubuntu-version() {
-  lsb_release -a;
+  lsb_release -d;
 }
-alias check-version='ubuntu-version'
+
+ubuntu-release() {
+  cat /etc/os-release;
+}
 #-------------------------
 #
 
