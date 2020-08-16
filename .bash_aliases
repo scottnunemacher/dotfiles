@@ -227,8 +227,12 @@ f2b-status-jail-details() {
 }
 
 #-------------------------
-#
-
+# WordPress CLI
+# run wp-cli with the correct user to avoid permission denied-problems
+# From: https://blog.christosoft.de/2017/06/wp-cli-run-as-correct-user/
+wp() {
+  sudo -u `stat -c '%U' .` -s -- wp "$@";
+}
 #-------------------------
 #
 
