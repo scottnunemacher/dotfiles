@@ -167,7 +167,7 @@ alias motd='cat /run/motd.dynamic'
 # FAIL2BAN (if you have it)
 # Read Fail2Ban logs easier
 # cd to fail2ban directory
-alias cdf2b='cd /etc/fail2ban/'
+alias f2b='cd /etc/fail2ban/'
 
 # starts the server and the jail
 f2b-start() {
