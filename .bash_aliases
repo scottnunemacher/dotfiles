@@ -234,8 +234,12 @@ wp() {
   sudo -u `stat -c '%U' .` -s -- wp "$@";
 }
 #-------------------------
-#
-
+# UBUNTU
+# Check Ubuntu Version
+ubuntu-version() {
+  lsb_release -a;
+}
+alias check-version='ubuntu-version'
 #-------------------------
 #
 
