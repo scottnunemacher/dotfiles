@@ -231,6 +231,13 @@ gpg-verify() {
   gpg --verify $1{.asc*,};
 }
 
+#-------------------------
+# SYSTEMD-ANALYZE
+# Analyze system startup time
+# Useful tool to implament in the future
+# systemd-analyze
+
+
 #========================================
 # SECURITY
 #========================================
