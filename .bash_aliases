@@ -189,6 +189,11 @@ update-upgrade(){
 }
 
 #-------------------------
+# HOSTNAMECTL
+# General hostname information (for future reference)
+# hostnamectl
+
+#-------------------------
 # USERS & PERMISSIONS
 # List Users from /etc/passwd with getent
 alias listusers='getent passwd'
