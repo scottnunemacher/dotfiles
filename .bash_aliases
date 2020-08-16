@@ -255,6 +255,12 @@ f2b-status-jail-details() {
 }
 
 #-------------------------
+# MALDET
+
+#-------------------------
+# RKHUNTER
+
+#-------------------------
 # WORDPRESS CLI
 # run wp-cli with the correct user to avoid permission denied-problems
 # From: https://blog.christosoft.de/2017/06/wp-cli-run-as-correct-user/
