@@ -135,6 +135,13 @@ members() {
 }
 
 #-------------------------
+# UPDATE
+# Update and upgrade easier
+update-upgrade(){
+  apt update && apt upgrade;
+}
+
+#-------------------------
 # DISK USAGE
 # List size current directory ONLY
 list-size() {
