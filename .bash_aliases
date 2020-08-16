@@ -1,5 +1,5 @@
 #========================================
-# Use mybash for .bash_aliases
+# MYBASH
 #========================================
 # Edit .bash_aliases file by running 'mybash'
 alias mybash='nano ~/.bash_aliases'
@@ -9,6 +9,10 @@ alias mybash='nano ~/.bash_aliases'
   . ~/.bash_aliases;
 }
 
+
+#========================================
+# FANCYPROMPT
+#========================================
 # Edit .bash_fancyprompt file by running 'fancyprompt'
 alias fancyprompt='nano ~/bin/.bash_fancyprompt'
 
@@ -16,6 +20,11 @@ alias fancyprompt='nano ~/bin/.bash_fancyprompt'
 .fancyprompt() {
   . ~/bin/.bash_fancyprompt;
 }
+
+
+#========================================
+# CORE UTILITIES CHANGES
+#========================================
 
 #-------------------------
 # GREP - Grep - Make grep more user-friendly by highlighting matches.
@@ -49,15 +58,21 @@ alias l='ls -hal --group-directories-first'
 # List easier: (h)uman readable, (a)ll files, (l)ist format, (t)ime sorted, (r)eversed
 alias lr='ls -haltr'
 
+
+#========================================
+# USER NAVIGATION
+#========================================
+
 #-------------------------
 # NAVIGATION
 # CD - cd then list 
 newcd() {
   builtin cd "$@" && l;
 }
+# This shortcuts the 'cd' utility to always 'ls' after a 'cd'
 alias cd='newcd'
 
-# Make directory then change into it.
+# Make directory then change into it
 mkcd() {
   mkdir "$1";
   cd "$1";
@@ -71,12 +86,14 @@ alias up='cd ../'
 alias up2='cd ../../'
 alias up3='cd ../../../'
 
-# Return to any previous directory easier
+# Return to last directory location easier
 back() {
-  cd $OLDPWD;
+  cd "$OLDPWD";
 }
 alias b='back'
 
+#-------------------------
+# USER SHORTCUTS
 # Shortcut to commonly used directories
 alias ~='cd ~' # Change to the user's home direcotry (~)
 alias h='cd ~' # Change to the user's home direcotry (~)
@@ -89,28 +106,86 @@ alias www='cd /var/www/'
 alias html='cd /var/www/html/'
 alias fail2ban='cd /etc/fail2ban/'
 
-#-------------------------
-# TMUX - Shortcuts
-alias tl='tmux ls'
-alias ta='tmux a'
-alias t='tmux'
+
+#========================================
+# SSH & SESSION
+#========================================
 
 #-------------------------
-# SSH, SSH CONFIG, USEABILITY
+# MOTD - MESSAGE OF THE DAY
+# See motd when needed
+alias motd='cat /run/motd.dynamic'
+
+#-------------------------
+# SSHCONFIG
 # Edit the ssh config file
 alias sshconfig='nano ~/.ssh/config'
 
 #-------------------------
-# NETWORK and HOST
+# TMUX TERMINAL SESSION MULTIPLEXER
+# List available Tmux server sessions
+tl() {
+  tmux ls;
+}
+
+# Attach to a specific Tmux session target name/number listed from tmux ls.
+# for example, the above tl produces (if you have 3 sessions running): 
+#
+# 0: 1 windows (created Sun Oct 21 13:37:00 2015) [158x39]
+# 1: 1 windows (created Sun Oct 21 13:37:00 2015) [158x39]
+# 2: 1 windows (created Sun Oct 21 13:37:00 2015) [158x39]
+#
+# Attach to that last session with:
+# ta 2
+ta() {
+  tmux a -t "$@";
+}
+
+# Tmux start a new (or additional) server session
+t() {
+  tmux;
+}
+
+
+#========================================
+# NETWORK & HOST
+#========================================
+
+#-------------------------
+# IP
 # Get current public IP address in plaintext
 alias whatismyip="curl http://ipecho.net/plain; echo"
 
 # List open UDP TCP connections:
 alias listopen='lsof -i | grep ESTABLISHED'
 
+#-------------------------
+# HOST
 # Find the network node hostname easier
 name() {
   uname -n;
+}
+
+
+#========================================
+# ADMIN & MANAGEMENT
+#========================================
+
+#-------------------------
+# UBUNTU
+# Simple check Ubuntu version
+ubuntu-version() {
+  lsb_release -d;
+}
+
+# Detailed release information
+ubuntu-release() {
+  cat /etc/os-release;
+}
+
+# Update and upgrade easier
+update-upgrade(){
+  apt update && apt upgrade;
 }
 
 #-------------------------
@@ -121,6 +196,7 @@ alias listusers='getent passwd'
 # List groups with getent
 alias listgroup='getent group'
 
+# !!! MACOS ONLY !!!
 # Check to see what members are part of a group.
 # Usage: 'members staff' to see a list of members belonging to a group called staff
 members() {
@@ -131,20 +207,13 @@ members() {
 }
 
 #-------------------------
-# UPDATE
-# Update and upgrade easier
-update-upgrade(){
-  apt update && apt upgrade;
-}
-
-#-------------------------
 # DISK USAGE
-# List size current directory ONLY
+# List size of current directory ONLY
 list-size() {
   du -sh .
 }
 
-# List inode count recursive current directory
+# List count of files (inodes) in current directory recursively
 list-count() {
   echo "Detailed Inode usage for: $(pwd)";
   for d in `find -maxdepth 1 -type d |cut -d\/ -f2 |grep -xv . |sort`;
@@ -156,15 +225,15 @@ list-count() {
 
 #-------------------------
 # GPG 
-# Verify a gpg signed file with a ASC Signature with a matching name.
+# Verify a gpg signed file with matching ASC Signature file.
+# Signature file must have a matching name and be in same directory.
 gpg-verify() {
   gpg --verify $1{.asc*,};
 }
 
-#-------------------------
-# MOTD - Message Of The Day
-# See motd when needed
-alias motd='cat /run/motd.dynamic'
+#========================================
+# SECURITY
+#========================================
 
 #-------------------------
 # FAIL2BAN (if you have it)
@@ -258,10 +327,27 @@ f2b-status-jail-details() {
 }
 
 #-------------------------
-# MALDET
+# LINUX MALWARE DETECT / LMD / MALDET
 
 #-------------------------
 # RKHUNTER
+
+#-------------------------
+# ClamAV
+# -i, --infected
+#               Only print infected files.
+#
+# --bell Sound bell on virus detection.
+#
+# -r, --recursive
+#               Scan directories recursively. All the subdirectories in the given directory will be scanned.
+#
+# -z, --allmatch
+#               After a match, continue scanning within the file for additional matches.
+# Run clamscan recursively and only return infected files
+clamscan-recursive-infected() {
+  clamscan -i -r -z --bell "$@";
+}
 
 #-------------------------
 # WORDPRESS CLI
@@ -269,17 +355,6 @@ f2b-status-jail-details() {
 # From: https://blog.christosoft.de/2017/06/wp-cli-run-as-correct-user/
 wp() {
   sudo -u `stat -c '%U' .` -s -- wp "$@";
-}
-
-#-------------------------
-# UBUNTU
-# Check Ubuntu Version
-ubuntu-version() {
-  lsb_release -d;
-}
-
-ubuntu-release() {
-  cat /etc/os-release;
 }
 
 #-------------------------
@@ -307,7 +382,7 @@ if [ -d $(eval echo "~$different_user")/bin ]; then
 fi
 
 #========================================
-# Fancyprompt MUST BE LAST SECTION
+# FANCYPROMPT - !!! MUST BE LAST SECTION !!!
 #========================================
 # Use a cool fancy prompt
 if [ -f ~/bin/.bash_fancyprompt ]; then
