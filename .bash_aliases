@@ -166,6 +166,9 @@ alias motd='cat /run/motd.dynamic'
 #-------------------------
 # FAIL2BAN (if you have it)
 # Read Fail2Ban logs easier
+# cd to fail2ban directory
+alias f2b-cd='cd /etc/fail2ban/'
+
 # Report from all log files, group by IP address
 f2b-group-by-ip() {
   awk '($(NF-1) = /Ban/){print $NF}' /var/log/fail2ban.log* | \
