@@ -91,16 +91,12 @@ alias fail2ban='cd /etc/fail2ban/'
 
 #-------------------------
 # TMUX - Shortcuts
-alias out='logout'
-
-#-------------------------
-# TMUX - Shortcuts
 alias tl='tmux ls'
 alias ta='tmux a'
 alias t='tmux'
 
 #-------------------------
-# SSH
+# SSH, SSH CONFIG, USEABILITY
 # Edit the ssh config file
 alias sshconfig='nano ~/.ssh/config'
 
