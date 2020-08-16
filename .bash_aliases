@@ -169,6 +169,31 @@ alias motd='cat /run/motd.dynamic'
 # cd to fail2ban directory
 alias f2b-cd='cd /etc/fail2ban/'
 
+# starts the server and the jail
+f2b-start() {
+  fail2ban-client start;
+}
+
+# reloads the configuration
+f2b-reload() {
+  fail2ban-client reload;
+}
+
+# stops all jails and terminate the server
+f2b-stop() {
+  fail2ban-client stop;
+}
+
+# gets the current status of the server
+f2b-status() {
+  fail2ban-client status;
+}
+
+# tests if the server is alive
+f2b-ping() {
+  fail2ban-client ping;
+}
+
 # Report from all log files, group by IP address
 f2b-group-by-ip() {
   awk '($(NF-1) = /Ban/){print $NF}' /var/log/fail2ban.log* | \
