@@ -58,6 +58,9 @@ alias l='ls -hal --group-directories-first'
 # List easier: (h)uman readable, (a)ll files, (l)ist format, (t)ime sorted, (r)eversed (oldest to newest)
 alias lrt='ls -haltr'
 
+# List easier: (h)uman readable, (a)ll files, (l)ist format, (S)ize sorted, (r)eversed (smallest to largest)
+alias lrs='ls -halSr'
+
 
 #========================================
 # USER NAVIGATION
