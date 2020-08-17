@@ -55,8 +55,8 @@ alias ls='LANG=C ls --color=always'
 #List easier: (h)uman readable, (a)ll files, (l)ist format, directories-first
 alias l='ls -hal --group-directories-first'
 
-# List easier: (h)uman readable, (a)ll files, (l)ist format, (t)ime sorted, (r)eversed
-alias lr='ls -haltr'
+# List easier: (h)uman readable, (a)ll files, (l)ist format, (t)ime sorted, (r)eversed (oldest to newest)
+alias lrt='ls -haltr'
 
 
 #========================================
