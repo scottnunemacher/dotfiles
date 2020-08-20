@@ -270,11 +270,6 @@ f2b-stop() {
   fail2ban-client stop;
 }
 
-# gets the current status of the server
-f2b-status() {
-  fail2ban-client status;
-}
-
 # tests if the server is alive
 f2b-ping() {
   fail2ban-client ping;
