@@ -255,21 +255,6 @@ gpg-verify() {
 # cd to fail2ban directory
 alias f2b='cd /etc/fail2ban/'
 
-# starts the server and the jail
-f2b-start() {
-  fail2ban-client start;
-}
-
-# reloads the configuration
-f2b-reload() {
-  fail2ban-client reload;
-}
-
-# stops all jails and terminate the server
-f2b-stop() {
-  fail2ban-client stop;
-}
-
 # tests if the server is alive
 f2b-ping() {
   fail2ban-client ping;
