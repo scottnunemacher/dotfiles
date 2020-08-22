@@ -52,13 +52,13 @@ alias mv='mv -i'
 # LS - List easier: color always
 alias ls='LANG=C ls --color=always'
 
-#List easier: (h)uman readable, (a)ll files, (l)ist format, directories-first
+#List easier: (h)uman readable, (a)ll files, (l)ong format, directories-first
 alias l='ls -hal --group-directories-first'
 
-# List easier: (h)uman readable, (a)ll files, (l)ist format, (t)ime sorted, (r)eversed (oldest to newest)
+# List easier: (h)uman readable, (a)ll files, (l)ong format, (t)ime sorted, (r)eversed (oldest to newest)
 alias lrt='ls -haltr'
 
-# List easier: (h)uman readable, (a)ll files, (l)ist format, (S)ize sorted, (r)eversed (smallest to largest)
+# List easier: (h)uman readable, (a)ll files, (l)ong format, (S)ize sorted, (r)eversed (smallest to largest)
 alias lrs='ls -halSr'
 
 
