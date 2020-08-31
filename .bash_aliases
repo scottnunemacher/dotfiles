@@ -46,7 +46,8 @@ alias n='nano -r 0 $1'
 
 #-------------------------
 # CLEAR - Clear screen easier
-alias c='clear && l'
+alias c='clear'
+alias cl='clear && l'
 
 #-------------------------
 # RM - Force interactive argument
