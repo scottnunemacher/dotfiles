@@ -242,7 +242,10 @@ gpg-verify() {
 #-------------------------
 # SYSTEMD-ANALYZE
 # Analyze system startup time (for future reference)
-# systemd-analyze
+# See what is responsible for startup time
+# Use: systemd-analyze blame
+# See what is responsible for startup time and grep for an item like snap
+# Use: systemd-analyze blame | grep snap
 
 
 #========================================
