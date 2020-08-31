@@ -1,4 +1,14 @@
 #========================================
+#  Use to clone into a non-empty home directory
+#========================================
+# cd ~
+# git init
+# git remote add origin https://github.com/scottnunemacher/bash-setup-with-bin.git
+# git fetch
+# git checkout -t origin/master
+
+
+#========================================
 # MYBASH
 #========================================
 # Edit .bash_aliases file by running 'mybash'
