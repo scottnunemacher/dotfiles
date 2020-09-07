@@ -126,6 +126,11 @@ alias fail2ban='cd /etc/fail2ban/'
 #========================================
 
 #-------------------------
+# SSH CONNECTION DETAILS
+# See the connection details for your ssh session:
+alias sshconnection='echo $SSH_CONNECTION'
+
+#-------------------------
 # MOTD - MESSAGE OF THE DAY
 # See motd when needed
 alias motd='cat /run/motd.dynamic'
