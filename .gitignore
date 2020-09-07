@@ -1,12 +1,12 @@
 # From: https://stackoverflow.com/a/52295765
 
-# Ignore everything
+# Ignore everything in the home directory
 /*
 
-# Track these files
+# Track only these files in home directory
 !.gitignore
 !.bash_aliases
 
-# Track these folders (and everything in them *)
+# Track the ~/bin directory (and everything inside *)
 !bin/
 !bin/*
