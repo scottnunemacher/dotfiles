@@ -154,7 +154,7 @@ tl() {
 # 1: 1 windows (created Sun Oct 21 13:37:00 2015) [158x39]
 # 2: 1 windows (created Sun Oct 21 13:37:00 2015) [158x39]
 #
-# Attach to that last session with:
+# Attach to that last session in the list with:
 # ta 2
 ta() {
   tmux a -t "$@";
