@@ -1,5 +1,5 @@
 # My bash setup with a fancyprompt & ~/bin directory
-My personal bash setup using a .bash_aliases file and accompanying ~/bin directory that includes a fun fancyprompt for other useful command line scripts.
+My personal bash setup using a .bash_aliases file and accompanying ~/bin directory that includes a fun fancyprompt and space for other future useful command line scripts.
 
 I hope this helps someone. Enjoy.
 
