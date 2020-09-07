@@ -31,7 +31,7 @@ Fetch the newest data from the repo (this dosen't move any new files into home y
 git fetch
 ```
 
-The next command does move/clone data (actually just catches up the home directory with the repos remote origin/master current branch). The repo's .gitignore file will prevent tracking anything in the home directory and will only track repo files and anything added inside new `~/bin` directory. See for yourself the .gitignore file in the repo to understand.
+The next command WILL move/clone data (actually just catches up the home directory with the repos remote origin/master current branch). The repo's .gitignore file will prevent tracking anything in the home directory and will only track repo files and anything added inside the new `~/bin` directory. See for yourself the .gitignore file in the repo to understand.
 ```
 git checkout -t origin/master
 ```
