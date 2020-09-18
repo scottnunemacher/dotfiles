@@ -10,7 +10,7 @@ Enjoy.
 ## NOTE TO MYSELF: Clone Into a Non-Empty Home Directory
 Non-destructively clone the repo into a non-empty home directory on an Ubuntu/Debian server with the following commands.
 
-Log into server as user. Change to the user's home directory with:
+Log into server as user. Change to the user's non-empty home directory with:
 ```
 cd ~
 ```
