@@ -4,8 +4,10 @@
 /*
 
 # Track only these files in home directory
-!.gitignore
 !.bash_aliases
+!.gitignore
+!LICENSE
+!README.md
 
 # Track the ~/bin directory (and everything inside *)
 !bin/
