@@ -50,10 +50,10 @@ alias c='clear'
 alias cl='clear && l'
 
 #-------------------------
-# RM - Force interactive argument
-alias rm='rm -i -- $1'
-# Delete a folder and everything in it with ONE command (interactive once)
-alias rmall='rm -rI -- $1'
+# RM - Remove Interactively
+alias rm='rm --interactive=always $@'
+# Remove a folder and everything in it with ONE command (interactive once)
+alias rmall='rm --interactive=once --dir --recursive $@'
 
 #-------------------------
 # MV - Force interactive argument
