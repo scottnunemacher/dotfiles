@@ -223,7 +223,7 @@ alias listgroup='getent group'
 # !!! MACOS ONLY !!!
 # Check to see what members are part of a group.
 # Usage: 'members staff' to see a list of members belonging to a group called staff
-members() {
+macos-members() {
   dscl . -list /Users | while read user;
   do printf "$user ";
   dsmemberutil checkmembership -U "$user" -G "$*";
