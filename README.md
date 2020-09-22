@@ -40,6 +40,20 @@ The next command WILL move/clone data (actually just catches up the home directo
 git checkout -t origin/master
 ```
 
+You are now up to date with 'origin/master'.
+
+Want to delete the LICENSE and README.md from your home folder and stop (local only)tracking them cuz... don't care about them? Fine, just run: 
+```
+git update-index --assume-unchanged LICENSE README.md
+```
+
+Then delete the LICENSE and README.md from the home folder. No future (local only) tracking will take place of LICENSE and README.md. Peace.
+
+Change your mind and want to track LICENSE and README.md again? Fine, just run the following which will remove your local custom changes and reset to origin/master:
+```
+git reset --hard origin/master
+```
+
 Done.
 
 > Cloning into a non-empty directory...
