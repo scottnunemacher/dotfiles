@@ -217,6 +217,10 @@ update-upgrade(){
 # List Users from /etc/passwd with getent
 alias listusers='getent passwd'
 
+# List Password metadata details for all users.
+# Doesn't un-hash passwords, that would be impossible.
+alias listpasswords='passwd -S -a'
+
 # List groups with getent
 alias listgroup='getent group'
 
