@@ -375,6 +375,13 @@ wp() {
 }
 
 #-------------------------
+# GIT
+# List git aliases from your .gitconfig file if any
+git-list() {
+  git config --get-regexp ^alias\. | sed -e s/^alias\.// -e s/\ /\ =\ / | sort;
+}
+
+#-------------------------
 # 
 
 #-------------------------
