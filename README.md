@@ -35,12 +35,12 @@ Fetch the newest data from the repo (this dosen't move any new files into home y
 git fetch
 ```
 
-The next command WILL move/clone data (actually just catches up the home directory with the repos remote origin/master current branch). The repo's .gitignore file will prevent tracking anything in the home directory and will only track repo files and anything added inside the new `~/bin` directory. See for yourself the .gitignore file in the repo to understand.
+The next command WILL move/clone data (actually just catches up the home directory with the repos remote origin/main current branch). The repo's .gitignore file will prevent tracking anything in the home directory and will only track repo files and anything added inside the new `~/bin` directory. See for yourself the .gitignore file in the repo to understand.
 ```
-git checkout -t origin/master
+git checkout -t origin/main
 ```
 
-You are now up to date with 'origin/master'.
+You are now up to date with 'origin/main'.
 
 Want to delete the LICENSE and README.md from your home folder and stop (local only)tracking them cuz... don't care about them? Fine, just run: 
 ```
@@ -49,9 +49,9 @@ git update-index --assume-unchanged LICENSE README.md
 
 Then delete the LICENSE and README.md from the home folder. No future (local only) tracking will take place of LICENSE and README.md. Peace.
 
-Change your mind and want to track LICENSE and README.md again? Fine, just run the following which will remove your local custom changes and reset to origin/master:
+Change your mind and want to track LICENSE and README.md again? Fine, just run the following which will remove your local custom changes and reset to origin/main:
 ```
-git reset --hard origin/master
+git reset --hard origin/main
 ```
 
 Done.
