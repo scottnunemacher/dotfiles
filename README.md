@@ -4,7 +4,7 @@ My collection of dotfiles used for configuration.
 
 I hope this helps someone. Enjoy.
 
-Clone | Copy | Edit your ❤️ out
+Clone | Copy | Edit your ❤️ out.
 
 MIT License
 
