@@ -1,5 +1,5 @@
 # .bash_fancyprompt
-# see: https://en.wikipedia.org/wiki/ANSI_escape_code#Escape_sequences
+# For reference: https://en.wikipedia.org/wiki/ANSI_escape_code#Escape_sequences
 
 RESET='\033[0m'                # color reset
 

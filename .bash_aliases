@@ -1,34 +1,25 @@
 #========================================
-#  Use to clone into a non-empty home directory
+#  HOW TO USE
 #========================================
-# cd ~
-# git init
-# git remote add origin https://github.com/scottnunemacher/bash-setup-with-bin.git
-# git fetch
-# git checkout -t origin/master
+
+#-------------------------
+# Clone into a non-empty home directory with:
+#   cd ~
+#   git init
+#   git remote add origin https://github.com/scottnunemacher/dotfiles.git
+#   git fetch
+#   git checkout -t origin/main
 
 
 #========================================
 # MYBASH
 #========================================
-# Edit .bash_aliases file by running 'mybash'
+# Edit .bash_aliases file by running 'mybash'.
 alias mybash='nano ~/.bash_aliases'
 
-# Source this .bash_aliases file after modifying it by running '.mybash'.
+# Then source the .bash_aliases file after modification by running '.mybash'.
 .mybash() {
   . ~/.bash_aliases;
-}
-
-
-#========================================
-# FANCYPROMPT
-#========================================
-# Edit .bash_fancyprompt file by running 'fancyprompt'
-alias fancyprompt='nano ~/bin/.bash_fancyprompt'
-
-# Source this .bash_fancyprompt file after modifying it by running '.fancyprompt'.
-.fancyprompt() {
-  . ~/bin/.bash_fancyprompt;
 }
 
 
@@ -37,36 +28,37 @@ alias fancyprompt='nano ~/bin/.bash_fancyprompt'
 #========================================
 
 #-------------------------
-# GREP - Grep - Make grep more user-friendly by highlighting matches.
+# GREP - Make grep more user-friendly by highlighting matches.
 alias grep='grep --color=auto'
 
 #-------------------------
-# NANO - Nano easier
+# NANO - Nano easier: w(r)ap at the widest screen column (0).
 alias n='nano -r 0 $1'
 
 #-------------------------
-# CLEAR - Clear screen easier
+# CLEAR - Clear the screen faster.
 alias c='clear'
+# Clear the screen and list faster.
 alias cl='clear && l'
 
 #-------------------------
-# RM - Remove Interactively
+# RM - Remove files or directories (force Interactivity).
 alias rm='rm --interactive=always $@'
-# Remove a folder and everything in it with ONE command (interactive once)
+# Remove a folder and everything in it with ONE command (interactive once).
 alias rmall='rm --interactive=once --dir --recursive $@'
 
 #-------------------------
-# MV - Force interactive argument
+# MV - Move files or directories (force Interactivity).
 alias mv='mv -i'
 
 #-------------------------
-# LS - List easier: color always
+# LS - List easier: color always.
 alias ls='LANG=C ls --color=always'
 
-#List easier: (h)uman readable, (a)ll files, (l)ong format, directories-first
+#List easier: (h)uman readable, (a)ll files, (l)ong format, directories-first.
 alias l='ls -hal --group-directories-first'
 
-# List easier: (h)uman readable, (a)ll files, (l)ong format, (t)ime sorted, (r)eversed (oldest to newest)
+# List easier: (h)uman readable, (a)ll files, (l)ong format, (t)ime sorted, (r)eversed (oldest to newest).
 alias lrt='ls -haltr'
 
 # List easier: (h)uman readable, (a)ll files, (l)ong format, (S)ize sorted, (r)eversed (smallest to largest)
@@ -79,20 +71,20 @@ alias lrs='ls -halSr'
 
 #-------------------------
 # NAVIGATION
-# CD - cd then list 
+# CD - Change directory then list contents of new directory.
 newcd() {
   builtin cd "$@" && l;
 }
-# This shortcuts the 'cd' utility to always 'ls' after a 'cd'
+# This shortcuts the 'cd' utility with the above function to always 'ls' after a 'cd'
 alias cd='newcd'
 
-# Make directory then change into it
+# MKDIR - Make directory then change into it
 mkcd() {
   mkdir "$1";
   cd "$1";
 }
 
-# Go up directories easier
+# Go up directories easier.
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
@@ -100,7 +92,7 @@ alias up='cd ../'
 alias up2='cd ../../'
 alias up3='cd ../../../'
 
-# Return to last directory location easier
+# Return to last directory easier.
 back() {
   cd "$OLDPWD";
 }
@@ -108,13 +100,13 @@ alias b='back'
 
 #-------------------------
 # USER SHORTCUTS
-# Shortcut to commonly used directories
-alias ~='cd ~' # Change to the user's home direcotry (~)
-alias h='cd ~' # Change to the user's home direcotry (~)
+# Shortcut to commonly used directories (if exists).
+alias ~='cd ~' # Change to the user's home direcotry (~).
+alias h='cd ~' # Change to the user's home direcotry (~).
 alias archive='cd ~/archive/'
 alias bin='cd ~/bin/'
 alias docs='cd ~/docs/'
-alias home='cd /home/' # Change to the literal /home/ directory
+alias home='cd /home/' # !!! Change to the LITERAL /home/ directory.
 alias log='cd /var/log/'
 alias www='cd /var/www/'
 alias html='cd /var/www/html/'
@@ -127,12 +119,12 @@ alias fail2ban='cd /etc/fail2ban/'
 
 #-------------------------
 # SSH CONNECTION DETAILS
-# See the connection details for your ssh session:
+# See the connection details for your ssh session.
 alias sshconnection='echo $SSH_CONNECTION'
 
 #-------------------------
 # MOTD - MESSAGE OF THE DAY
-# See motd when needed
+# See motd (varies in OS distributions, adjust accordingly).
 alias motd='cat /run/motd.dynamic'
 
 #-------------------------
@@ -142,7 +134,7 @@ alias sshconfig='nano ~/.ssh/config'
 
 #-------------------------
 # TMUX TERMINAL SESSION MULTIPLEXER
-# List available Tmux server sessions
+# List available Tmux server sessions easier (if any).
 tl() {
   tmux ls;
 }
@@ -160,7 +152,7 @@ ta() {
   tmux a -t "$@";
 }
 
-# Tmux start a new (or additional) server session
+# Tmux start a new (or additional) server session.
 t() {
   tmux;
 }
@@ -172,7 +164,7 @@ t() {
 
 #-------------------------
 # IP
-# Get current public IP address in plaintext
+# Get current public IP address in plaintext (curl must be installed).
 alias whatismyip="curl http://ipecho.net/plain; echo"
 
 # List open UDP TCP connections:
@@ -180,7 +172,7 @@ alias listopen='lsof -i | grep ESTABLISHED'
 
 #-------------------------
 # HOST
-# Find the network node hostname easier
+# Find the network node hostname easier.
 name() {
   uname -n;
 }
@@ -192,41 +184,41 @@ name() {
 
 #-------------------------
 # UBUNTU
-# Simple check Ubuntu version
+# Simple check Ubuntu version.
 ubuntu-version() {
   lsb_release -d;
 }
 
-# Detailed release information
+# Detailed release information.
 ubuntu-release() {
   cat /etc/os-release;
 }
 
-# Update and upgrade easier
+# Update and upgrade easier.
 update-upgrade(){
   apt update && apt upgrade;
 }
 
 #-------------------------
-# HOSTNAMECTL
-# General hostname information (for future reference)
+# TODO HOSTNAMECTL
+# General hostname information
 # hostnamectl
 
 #-------------------------
 # USERS & PERMISSIONS
-# List Users from /etc/passwd with getent
+# List Users from /etc/passwd with getent.
 alias listusers='getent passwd'
 
 # List Password metadata details for all users.
 # Doesn't un-hash passwords, that would be impossible.
 alias listpasswords='passwd -S -a'
 
-# List groups with getent
+# List groups with getent.
 alias listgroup='getent group'
 
 # !!! MACOS ONLY !!!
 # Check to see what members are part of a group.
-# Usage: 'members staff' to see a list of members belonging to a group called staff
+# Usage: 'members staff' to see a list of members belonging to a group called staff.
 macos-members() {
   dscl . -list /Users | while read user;
   do printf "$user ";
@@ -236,12 +228,12 @@ macos-members() {
 
 #-------------------------
 # DISK USAGE
-# List size of current directory ONLY
+# List size of current directory ONLY.
 list-size() {
   du -sh .
 }
 
-# List count of files (inodes) in current directory recursively
+# List count of files (inodes) in current directory recursively.
 list-count() {
   echo "Detailed Inode usage for: $(pwd)";
   for d in `find -maxdepth 1 -type d |cut -d\/ -f2 |grep -xv . |sort`;
@@ -260,8 +252,8 @@ gpg-verify() {
 }
 
 #-------------------------
-# SYSTEMD-ANALYZE
-# Analyze system startup time (for future reference)
+# TODO SYSTEMD-ANALYZE
+# Analyze system startup time
 # See what is responsible for startup time
 # Use: systemd-analyze blame
 # See what is responsible for startup time and grep for an item like snap
@@ -273,17 +265,17 @@ gpg-verify() {
 #========================================
 
 #-------------------------
-# FAIL2BAN (if you have it)
-# Read Fail2Ban logs easier
-# cd to fail2ban directory
+# FAIL2BAN (if installed)
+# Read Fail2Ban logs easier.
+# cd to fail2ban directory.
 alias f2b='cd /etc/fail2ban/'
 
-# tests if the server is alive
+# tests if the server is alive.
 f2b-ping() {
   fail2ban-client ping;
 }
 
-# Report from all log files, group by IP address
+# Report from all log files, group by IP address.
 f2b-group-by-ip() {
   awk '($(NF-1) = /Ban/){print $NF}' /var/log/fail2ban.log* | \
   sort | \
@@ -291,7 +283,7 @@ f2b-group-by-ip() {
   sort -n;
 }
 
-# Group by IP address and hostname
+# Group by IP address and hostname.
 f2b-group-by-ip-and-hostname() {
   awk '($(NF-1) = /Ban/){print $NF,"("$NF")"}' /var/log/fail2ban.log | \
   sort | \
@@ -300,7 +292,7 @@ f2b-group-by-ip-and-hostname() {
   sort -n;
 }
 
-# Group on today's activity
+# Group on today's activity.
 f2b-group-by-today() {
   grep "Ban " /var/log/fail2ban.log | \
   grep `date +%Y-%m-%d` | \
@@ -312,7 +304,7 @@ f2b-group-by-today() {
   sort -n;
 }
 
-# Report problematic subnets
+# Report problematic subnets.
 f2b-group-problem-subnets() {
   zgrep -h "Ban " /var/log/fail2ban.log* | \
   awk '{print $NF}' | \
@@ -332,22 +324,22 @@ f2b-summary-of-ban-events-by-day() {
   zgrep -h "Ban " /var/log/fail2ban.log* | awk '{print $5,$1}' | sort | uniq -c;
 }
 
-# Check status of fail2ban jails
+# Check status of fail2ban jails.
 f2b-status() {
   fail2ban-client status;
 }
 
-# Check status of a specific fail2ban jail (ex: sshd)
+# Check status of a specific fail2ban jail (ex: sshd).
 # usage: f2b-status-jail-details sshd
 f2b-status-jail-details() {
   fail2ban-client status "$@";
 }
 
 #-------------------------
-# LINUX MALWARE DETECT / LMD / MALDET
+# TODO LINUX MALWARE DETECT / LMD / MALDET
 
 #-------------------------
-# RKHUNTER
+# TODO RKHUNTER
 
 #-------------------------
 # ClamAV
@@ -361,14 +353,14 @@ f2b-status-jail-details() {
 #
 # -z, --allmatch
 #               After a match, continue scanning within the file for additional matches.
-# Run clamscan recursively and only return infected files
+# Run clamscan recursively and only return infected files.
 clamscan-recursive-infected() {
   clamscan -i -r -z --bell "$@";
 }
 
 #-------------------------
 # WORDPRESS CLI
-# Safely run wp-cli with the correct user to avoid permission denied-problems
+# Safely run wp-cli with the correct user to avoid permission denied-problems.
 # From: https://blog.christosoft.de/2017/06/wp-cli-run-as-correct-user/
 wp() {
   sudo -u `stat -c '%U' .` -s -- wp "$@";
@@ -376,7 +368,7 @@ wp() {
 
 #-------------------------
 # GIT
-# List git aliases from your .gitconfig file if any
+# Bash version to list git aliases from your .gitconfig file if any.
 git-list() {
   git config --get-regexp ^alias\. | sed -e s/^alias\.// -e s/\ /\ =\ / | sort;
 }
@@ -394,25 +386,29 @@ git-list() {
 #========================================
 # HISTORY
 #========================================
-# Disable history
-unset HISTFILE
-HISTFILE=/dev/null
+# Disable history by uncommenting these two lines:
+# unset HISTFILE
+# HISTFILE=/dev/null
+
 
 #========================================
-# ADD ~/BIN TO PATH
+# ADD ~/BIN TO PATH (IF ANY)
 #========================================
-# Check for ~/bin/ directory of current user and prepend to $PATH
-if [ -d $(eval echo "~$different_user")/bin ]; then
+# Check for ~/bin/ directory of current user and prepend to $PATH.
+if [ -d $(eval echo "~$different_user")/bin ]
+then
   PATH="$(eval echo \"~$different_user\")/bin:$PATH"
 fi
+
 
 #========================================
 # FANCYPROMPT - !!! MUST BE LAST SECTION !!!
 #========================================
-# Use a cool fancy prompt
-if [ -f ~/bin/.bash_fancyprompt ]; then
-    . ~/bin/.bash_fancyprompt
+if [ -f ~/.bash_fancyprompt ]
+then
+  . ~/.bash_fancyprompt
 fi
 
-# NOTHING BELOW THIS EOF
+
+# NOTHING BELOW THIS #EOF
 #EOF

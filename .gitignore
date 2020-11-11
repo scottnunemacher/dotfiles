@@ -5,10 +5,7 @@
 
 # Track only these files in home directory
 !.bash_aliases
+!.bash_fancyprompt
 !.gitignore
 !LICENSE
 !README.md
-
-# Track the ~/bin directory (and everything inside *)
-!bin/
-!bin/*
