@@ -29,13 +29,15 @@ NOTE: My .bash_aliases file already has that reference so no changes are necessa
 
 ## Cloning Into a Non-Empty Home Directory
 
-Non-destructively clone the repo into a non-empty home directory on an Ubuntu/Debian server. Log into server as user. Change to the user's non-empty home directory with:
+Non-destructively clone the repo into a non-empty home directory on an linux style server. 
+
+_*WARNING:*_ Before doing the following, rename any possibly conflicting files in your home directory compared to the files in the repo.
+
+Log into server as user and change to the user's non-empty home directory:
 
 ```
 cd ~
 ```
-
-_*WARNING:*_ Before doing the following, rename any possibly conflicting files in your home directory compared to the files in the repo.
 
 Initialize an empty git repo inside the home directory:
 
