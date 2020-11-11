@@ -12,7 +12,7 @@ MIT License
 
 The .bash_aliases file is the default way for bash to find a user's custom added aliases and functions. The .bash_aliases file just needs to be copied to a user's home directory where the .bashrc is located. It is heavily commented and should provide good reference. 
 
-NOTE: Some aliases & functions in the .bash_aliases file are macOS or Linux environment specific.
+**NOTE:** Some aliases & functions in the .bash_aliases file are macOS or Linux environment specific.
 
 ## .bash_fancyprompt File
 
@@ -25,13 +25,13 @@ then
 fi
 ```
 
-NOTE: My .bash_aliases file already has that reference so no changes are necessary if my .bash_aliases is used.
+**NOTE:** My .bash_aliases file already has that reference so no changes are necessary if my .bash_aliases is used.
 
 ## Cloning Into a Non-Empty Home Directory
 
 Non-destructively clone the repo into a non-empty home directory on an linux style server. 
 
-_*WARNING:*_ Before doing the following, rename any possibly conflicting files in your home directory compared to the files in the repo.
+**WARNING:**  Before doing the following steps, rename any possibly conflicting files in your home directory compared to the files in the repo for possible merge later.
 
 Log into server as user and change to the user's non-empty home directory:
 
@@ -75,7 +75,7 @@ Then delete the LICENSE and README.md from your home folder. No future (local on
 
 Change your mind and want to track LICENSE and README.md again? Fine, just run the following which will remove your local ignore-tracking and reset to origin/main:
 
-NOTE: this will catch you up to origin/main too if behind, but throw away any local changes you've made. Careful.
+**NOTE:** this will catch you up to origin/main too if behind, but throw away any local changes you've made. Careful.
 
 ```
 git reset --hard origin/main
