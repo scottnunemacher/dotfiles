@@ -19,7 +19,8 @@ NOTE: Some aliases & functions in the .bash_aliases file are macOS or Linux envi
 The .bash_fancyprompt file is a custom-created dotfile containing the shell PS1 prompt environment details and must be referenced in the .bashrc or .bash_aliases file like this:
 
 ```
-if [ -f ~/.bash_fancyprompt ] then
+if [ -f ~/.bash_fancyprompt ]
+then
   . ~/.bash_fancyprompt
 fi
 ```
