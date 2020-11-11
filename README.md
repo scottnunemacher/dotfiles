@@ -1,13 +1,11 @@
 # My bash setup with a fancyprompt & ~/bin directory
 My personal bash setup using a .bash_aliases file and accompanying ~/bin directory that includes a fun fancyprompt and space for other future useful command line scripts.
 
-I hope this helps someone.
+I hope this helps someone, enjoy.
 
-MIT License.
+Clone | Copy | Edit your ❤️ out | MIT License
 
-Enjoy.
-
-## NOTE TO MYSELF: Clone Into a Non-Empty Home Directory
+## Clone Into a Non-Empty Home Directory
 Non-destructively clone the repo into a non-empty home directory on an Ubuntu/Debian server with the following commands.
 
 Log into server as user. Change to the user's non-empty home directory with:
