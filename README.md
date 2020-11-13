@@ -16,7 +16,7 @@ The .bash_aliases file is the default way for bash to find a user's custom added
 
 ## .bash_fancyprompt File
 
-The .bash_fancyprompt file is a custom-created dotfile containing the shell PS1 prompt environment details and must be referenced in the .bashrc or .bash_aliases file like this:
+The .bash_fancyprompt file is a custom-created dotfile containing the shell PS1 prompt environment details and must be referenced in order to be used in the .bashrc or .bash_aliases file like this:
 
 ```
 if [ -f ~/.bash_fancyprompt ]
