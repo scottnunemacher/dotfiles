@@ -31,7 +31,7 @@ fi
 
 Non-destructively clone the repo into a non-empty home directory on an linux style server. 
 
-**WARNING:**  Before doing the following steps, rename any possibly conflicting files in your home directory compared to the files in the repo for possible merge later.
+**WARNING:** Before doing the following steps, rename any possibly conflicting files in your home directory compared to the files in the repo for possible merge later.
 
 Log into server as user and change to the user's non-empty home directory:
 
