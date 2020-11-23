@@ -73,7 +73,7 @@ alias lrs='ls -halSr'
 # NAVIGATION
 # CD - Change directory then list contents of new directory.
 newcd() {
-  builtin cd "$@" && l;
+  builtin cd "$@" && cl;
 }
 # This shortcuts the 'cd' utility with the above function to always 'ls' after a 'cd'
 alias cd='newcd'
