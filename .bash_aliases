@@ -382,6 +382,21 @@ git-list() {
 
 #-------------------------
 # 
+# MANUAL BACKUP OF WORDPRESS VIA COMMAND LINE
+# - IMPORTANT! Change to the root of wordpress to run these commands:
+#   cd /var/www/html
+# 
+# - Backup WP database with WP-CLI:
+#   wp db export
+# 
+# - Copy the name of the newly created .sql file to use in the next command.
+#   (might look like dfg235987234590-2020-01-10-345687fd.sql)
+#  
+# - Run the next command with your filname name inserted:
+#   Using the example then would be:
+#   tar -vczf dfg235987234590-2020-01-10-345687fd.gz .
+# 
+# Safely backup the newly created sql and tar file. Delete the originals.
 
 #-------------------------
 # 
