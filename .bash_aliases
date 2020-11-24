@@ -233,13 +233,6 @@ list-size() {
   du -sh .
 }
 
-#-------------------------
-# NCDU - NCurses Disk Usage
-# ncdu (NCurses Disk Usage) is a curses-based version of the well-known 'du', 
-# and provides a fast way to see what directories are using your disk space.
-# Install with:
-#   apt install ncdu
-
 # List count of files (inodes) in current directory recursively.
 list-count() {
   echo "Detailed Inode usage for: $(pwd)";
@@ -249,6 +242,13 @@ list-count() {
     done;
   printf "Total: \t\t$(find $(pwd) | wc -l)\n";
 }
+
+#-------------------------
+# NCDU - NCurses Disk Usage
+# ncdu (NCurses Disk Usage) is a curses-based version of the well-known 'du', 
+# and provides a fast way to see what directories are using your disk space.
+# Install with:
+#   apt install ncdu
 
 #-------------------------
 # GPG 
