@@ -244,6 +244,18 @@ list-count() {
 }
 
 #-------------------------
+# WHATS EATING DISK SPACE (IN A FILE)
+whats-eating-disk-space() {
+  date_today=$(date +%Y%m%d.%H%M%S);
+  find . -type f  -exec du -h {} + | sort -r -h > /tmp/ \
+  whats-eating-disk-space-$date_today.txt;
+  if [ $? > 0 ] 
+  then
+    echo "Done. View the file here: /tmp/whats-eating-disk-space-$date_today.txt";
+  fi
+}
+
+#-------------------------
 # NCDU - NCurses Disk Usage
 # ncdu (NCurses Disk Usage) is a curses-based version of the well-known 'du', 
 # and provides a fast way to see what directories are using your disk space.
