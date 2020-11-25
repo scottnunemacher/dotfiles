@@ -248,7 +248,7 @@ list-count() {
 whats-eating-disk-space() {
   date_today=$(date +%Y%m%d.%H%M%S);
   find . -type f  -exec du -h {} + | sort -r -h > /tmp/whats-eating-disk-space-$date_today.txt;
-  echo "Done. To view file: cat /tmp/whats-eating-disk-space-$date_today.txt";
+  printf "Done. To view file: \n `cat /tmp/whats-eating-disk-space-$date_today.txt | less`";
 }
 
 #-------------------------
