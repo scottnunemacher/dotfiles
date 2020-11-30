@@ -405,7 +405,11 @@ git-list() {
 # Safely backup the newly created sql and tar file. Delete the originals.
 
 #-------------------------
-# 
+# LOG FILE SETTINGS
+# Log file config directory:
+# cd /etc/rsyslog.d
+# Edit the default log file config settings
+# nano 50-default.conf
 
 #-------------------------
 # 
