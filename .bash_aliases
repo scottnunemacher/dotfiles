@@ -280,6 +280,11 @@ journal-recent() {
   journalctl -r | less -S;
 }
 
+#-------------------------
+# TIMEDATECTL
+# See the time setup on the server
+# timedatectl
+
 #========================================
 # SECURITY
 #========================================
