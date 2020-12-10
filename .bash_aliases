@@ -394,6 +394,30 @@ clamscan-recursive-infected() {
 }
 
 #-------------------------
+# TODO LYNIS 
+# Security auditing tool for Linux, macOS, and UNIX-based systems.
+# See: https://github.com/CISOfy/lynis
+# See these details here:
+# https://packages.cisofy.com/community/
+# 0. Run all following as root:
+# 1. Import key:
+#     wget -O - https://packages.cisofy.com/keys/cisofy-software-public.key | sudo apt-key add -
+# 2. Add software repository:
+#     echo "deb https://packages.cisofy.com/community/lynis/deb/ stable main" | sudo tee /etc/apt/sources.list.d/cisofy-lynis.list
+# 3. Refresh the local package database:
+#     apt update
+# 4. Install Lynis:
+#     apt install lynis
+# 5. Confirm version:
+#     lynis show version
+# 6. Is your version not the latest? Run this to see where your package came from:
+#     apt-cache policy lynis
+# 7. Consider pinning. Create the file '/etc/apt/preferences.d/lynis' with the following (uncommented) contents: 
+#     Package: lynis
+#     Pin: origin packages.cisofy.com
+#     Pin-Priority: 600
+
+#-------------------------
 # WORDPRESS CLI
 # Safely run wp-cli with the correct user to avoid permission denied-problems.
 # From: https://blog.christosoft.de/2017/06/wp-cli-run-as-correct-user/
