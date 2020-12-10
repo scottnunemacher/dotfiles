@@ -394,7 +394,7 @@ clamscan-recursive-infected() {
 }
 
 #-------------------------
-# TODO LYNIS 
+# LYNIS 
 # Security auditing tool for Linux, macOS, and UNIX-based systems.
 # github: https://github.com/CISOfy/lynis
 # 
