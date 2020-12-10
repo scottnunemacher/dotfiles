@@ -245,6 +245,7 @@ list-count() {
 
 #-------------------------
 # WHATS EATING DISK SPACE
+# Checks disk space usage for current directory
 whats-eating-disk-space() {
   find . -type f  -exec du -h {} + | sort -r -h | less
 }
