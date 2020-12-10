@@ -285,6 +285,11 @@ journal-recent() {
 # See the time setup on the server
 # timedatectl
 
+#-------------------------
+# LAST REBOOT
+# Views the reboot history
+# last reboot
+
 #========================================
 # SECURITY
 #========================================
