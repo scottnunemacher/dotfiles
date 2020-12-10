@@ -290,6 +290,11 @@ journal-recent() {
 # Views the reboot history
 # last reboot
 
+#-------------------------
+# LASTLOG
+# View the complete list of users and any most recent login time
+# lastlog
+
 #========================================
 # SECURITY
 #========================================
