@@ -273,6 +273,12 @@ gpg-verify() {
 # See what is responsible for startup time and grep for an item like snap
 # Use: systemd-analyze blame | grep snap
 
+#-------------------------
+# JOURNAL RECENT
+# Views the journal entries in reverse order (most recent at the top) with less(1)
+journal-recent() {
+  journalctl -r | less -S;
+}
 
 #========================================
 # SECURITY
