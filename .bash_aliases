@@ -423,11 +423,20 @@ clamscan-recursive-infected() {
 # 2.0 First Run
 # See: https://cisofy.com/documentation/lynis/get-started/#first-run
 #     lynis audit system
+#
+# 3.0 Report and Logging
+# See: https://cisofy.com/documentation/lynis/get-started/#report-logging
 # Test and debug information will be here:
 #     /var/log/lynis.log
 # Report data for system hardening will be here:
 #     /var/log/lynis-report.dat
 # Add any settings to custom.prf (see /etc/lynis/default.prf for all settings)
+# To list all available tests use:
+#     lynis show tests
+# To see the details of a specific test use:
+#     lynis show details [test-ID] (e.g. CORE-1000)
+# To see a list of all security tests for example, use grep like this:
+#     lynis show tests | grep security
 
 #-------------------------
 # WORDPRESS CLI
