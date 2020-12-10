@@ -396,26 +396,38 @@ clamscan-recursive-infected() {
 #-------------------------
 # TODO LYNIS 
 # Security auditing tool for Linux, macOS, and UNIX-based systems.
-# See: https://github.com/CISOfy/lynis
-# See these details here:
-# https://packages.cisofy.com/community/
-# 0. Run all following as root:
-# 1. Import key:
+# github: https://github.com/CISOfy/lynis
+# 
+# See Get Started details here:
+# https://cisofy.com/documentation/lynis/get-started/
+#
+# 1.0 Download and Installation (run all following as root):
+# See: https://packages.cisofy.com/community/
+# 1.1. Import key:
 #     wget -O - https://packages.cisofy.com/keys/cisofy-software-public.key | sudo apt-key add -
-# 2. Add software repository:
+# 1.2. Add software repository:
 #     echo "deb https://packages.cisofy.com/community/lynis/deb/ stable main" | sudo tee /etc/apt/sources.list.d/cisofy-lynis.list
-# 3. Refresh the local package database:
+# 1.3. Refresh the local package database:
 #     apt update
-# 4. Install Lynis:
+# 1.4. Install Lynis:
 #     apt install lynis
-# 5. Confirm version:
+# 1.5. Confirm version:
 #     lynis show version
-# 6. Is your version not the latest? Run this to see where your package came from:
+# 1.6. Is your version not the latest? Run this to see where your package came from:
 #     apt-cache policy lynis
-# 7. Consider pinning. Create the file '/etc/apt/preferences.d/lynis' with the following (uncommented) contents: 
+# 1.7. Consider pinning. Create the file '/etc/apt/preferences.d/lynis' with the following (uncommented) contents: 
 #     Package: lynis
 #     Pin: origin packages.cisofy.com
 #     Pin-Priority: 600
+#
+# 2.0 First Run
+# See: https://cisofy.com/documentation/lynis/get-started/#first-run
+#     lynis audit system
+# Test and debug information will be here:
+#     /var/log/lynis.log
+# Report data for system hardening will be here:
+#     /var/log/lynis-report.dat
+# Add any settings to custom.prf (see /etc/lynis/default.prf for all settings)
 
 #-------------------------
 # WORDPRESS CLI
