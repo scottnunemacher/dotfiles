@@ -437,6 +437,8 @@ clamscan-recursive-infected() {
 #     lynis show details [test-ID] (e.g. CORE-1000)
 # To see a list of all security tests for example, use grep like this:
 #     lynis show tests | grep security
+# !!! A great reference to see different Lynis details run:
+#     lynis show help show
 
 #-------------------------
 # WORDPRESS CLI
