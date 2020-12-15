@@ -1,3 +1,6 @@
+# MIT License
+# See wiki: https://github.com/scottnunemacher/dotfiles/wiki
+#
 #========================================
 #  HOW TO USE
 #========================================

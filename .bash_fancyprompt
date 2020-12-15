@@ -1,4 +1,9 @@
+# MIT License
+# See wiki: https://github.com/scottnunemacher/dotfiles/wiki
+#
+#========================================
 # .bash_fancyprompt
+#========================================
 # For reference: https://en.wikipedia.org/wiki/ANSI_escape_code#Escape_sequences
 
 RESET='\033[0m'                # color reset
