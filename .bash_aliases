@@ -454,7 +454,7 @@ wp() {
 #-------------------------
 # GIT
 # Bash version to list git aliases from your .gitconfig file if any.
-git-list() {
+git-aliases() {
   git config --get-regexp ^alias\. | sed -e s/^alias\.// -e s/\ /\ =\ / | sort;
 }
 
