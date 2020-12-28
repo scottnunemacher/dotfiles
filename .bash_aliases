@@ -443,6 +443,13 @@ clamscan-recursive-infected() {
 # !!! A great reference to see different Lynis details run:
 #     lynis show help show
 
+#--- UBUNTU 20.04+ -------
+# LET'S ENCRYPT (CERTBOT) SSL/TLS CA
+# Check the status of the certbot service:
+#     systemctl status certbot.timer
+# Test the certbot renewal process with a dry run:
+#     certbot renew --dry-run
+
 #-------------------------
 # WORDPRESS CLI
 # Safely run wp-cli with the correct user to avoid permission denied-problems.
