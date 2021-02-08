@@ -180,6 +180,11 @@ name() {
   uname -n;
 }
 
+#-------------------------
+# Check SSL/TLS Environment
+# Note: nmap must be installed, and change DOMAIN.com to web domain.
+# nmap --script ssl-enum-ciphers -p 443 DOMAIN.com
+
 
 #========================================
 # ADMIN & MANAGEMENT
