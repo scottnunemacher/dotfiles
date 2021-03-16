@@ -465,6 +465,14 @@ wp() {
 
 #-------------------------
 # GIT
+# git completion for command line
+# From: https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
+# Download to ~/ and rename with: `curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ~/.git-completion.bash`
+if [ -f ~/.git-completion.bash ]
+then
+  . ~/.git-completion.bash
+fi
+
 # Bash version to list git aliases from your .gitconfig file if any.
 git-aliases() {
   git config --get-regexp ^alias\. | sed -e s/^alias\.// -e s/\ /\ =\ / | sort;
