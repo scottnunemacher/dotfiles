@@ -102,18 +102,21 @@ back() {
 alias b='back'
 
 #-------------------------
-# USER SHORTCUTS
-# Shortcut to commonly used directories (if exists).
+# USER SHORTCUTS (if they exist).
 alias ~='cd ~' # Change to the user's home direcotry (~).
 alias h='cd ~' # Change to the user's home direcotry (~).
 alias archive='cd ~/archive/'
 alias bin='cd ~/bin/'
-alias docs='cd ~/docs/'
+
+# SYSTEM SHORTCUTS (if they exist).
 alias home='cd /home/' # !!! Change to the LITERAL /home/ directory.
 alias log='cd /var/log/'
 alias www='cd /var/www/'
 alias html='cd /var/www/html/'
 alias fail2ban='cd /etc/fail2ban/'
+
+# SPECIAL SHORTCUTS (if they exist).
+alias cdgh='cd ~/git/github/'
 
 
 #========================================
