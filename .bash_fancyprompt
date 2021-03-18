@@ -6,24 +6,24 @@
 #========================================
 # For reference: https://en.wikipedia.org/wiki/ANSI_escape_code#Escape_sequences
 
-RESET='\033[0m'                # color reset
+RESET='\033[0m'             # color reset
 
 # Original foreground color range: (8 colors)
-BLACK="\033[30m"               # foreground black
-RED="\033[31m"                 # foreground red
-GREEN="\033[32m"               # foreground green
-YELLOW="\033[33m"              # foreground yellow
-BLUE="\033[34m"                # foreground blue
-MAGENTA="\033[35m"             # foreground magenta
-CYAN="\033[36m"                # foreground cyan
-WHITE="\033[37m"               # foreground white
+BLACK="\033[30m"            # foreground black
+RED="\033[31m"              # foreground red
+GREEN="\033[32m"            # foreground green
+YELLOW="\033[33m"           # foreground yellow
+BLUE="\033[34m"             # foreground blue
+MAGENTA="\033[35m"          # foreground magenta
+CYAN="\033[36m"             # foreground cyan
+WHITE="\033[37m"            # foreground white
 
 # Expanded foreground color range (216 colors)
 # only a few self-named colors are chosen and displayed here
-DKBLUE="\033[38;5;27m"         # foreground dark blue
-LIME="\033[38;5;40m"           # foreground lime
-PURPLE="\033[38;5;57m"         # foreground purple
-ORANGE="\033[38;5;208m"        # foreground orange
+DKBLUE="\033[38;5;27m"      # foreground dark blue
+LIME="\033[38;5;40m"        # foreground lime
+PURPLE="\033[38;5;57m"      # foreground purple
+ORANGE="\033[38;5;208m"     # foreground orange
 
 # Check if root else reg user
 if [[ ${EUID} == 0 ]] ; then
@@ -45,3 +45,39 @@ fi
 PS1="\n$FRAME\342\224\214\342\224\200\$(if [[ \$? == 0 ]]; then echo \"✅\"; else echo \"🔥\";fi)$FRAME\342\224\200[$COLORWHO\u$FRAME@$COLORWHERE\H$FRAME]\342\224\200[$COLORDATETIME\d \t$FRAME]\n\342\224\234\342\224\200[$COLORPWD\w$FRAME]\n\342\224\224\342\224\200>$PERMS$RESET"
 
 unset FRAME;
+
+#
+#========================================
+# Bash Git Prompt
+#========================================
+# From: https://github.com/magicmonty/bash-git-prompt
+
+# Bash Git Prompt Settings
+    # Set config variables first
+    GIT_PROMPT_ONLY_IN_REPO=1
+
+    # GIT_PROMPT_FETCH_REMOTE_STATUS=0   # uncomment to avoid fetching remote status
+    # GIT_PROMPT_IGNORE_SUBMODULES=1 # uncomment to avoid searching for changed files in submodules
+    # GIT_PROMPT_WITH_VIRTUAL_ENV=0 # uncomment to avoid setting virtual environment infos for node/python/conda environments
+    # GIT_PROMPT_SHOW_UPSTREAM=1 # uncomment to show upstream tracking branch
+    # GIT_PROMPT_SHOW_UNTRACKED_FILES=normal # can be no, normal or all; determines counting of untracked files
+    # GIT_PROMPT_SHOW_CHANGED_FILES_COUNT=0 # uncomment to avoid printing the number of changed files
+    # GIT_PROMPT_STATUS_COMMAND=gitstatus_pre-1.7.10.sh # uncomment to support Git older than 1.7.10
+    # GIT_PROMPT_START=...    # uncomment for custom prompt start sequence
+    # GIT_PROMPT_END=...      # uncomment for custom prompt end sequence
+    # GIT_PROMPT_THEME=Custom # use custom theme specified in file GIT_PROMPT_THEME_FILE (default ~/.git-prompt-colors.sh)
+    # GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
+    # GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
+    # as last entry source the gitprompt script
+    source ~/.bash-git-prompt/gitprompt.sh
+
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+    __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
+    GIT_PROMPT_ONLY_IN_REPO=1
+    source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+fi
+
+#
+#========================================
+# 
+#========================================
