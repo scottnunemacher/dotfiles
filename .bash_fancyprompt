@@ -73,7 +73,7 @@ unset FRAME;
     # GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
     # as last entry source the gitprompt script
 
-while [[ "$PWD" != "$HOME" && -f "$HOME/.bash-git-prompt/gitprompt.sh" ]] ; do
+while [ "$PWD" != "$HOME" ] && [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ] ; do
     GIT_PROMPT_ONLY_IN_REPO=1
     source $HOME/.bash-git-prompt/gitprompt.sh
 done
