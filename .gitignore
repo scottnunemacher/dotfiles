@@ -1,7 +1,8 @@
 # From: https://stackoverflow.com/a/52295765
 
-# Ignore everything in the home directory
+# Ignore everything (and all subdirectories) in the home directory
 /*
+*/*
 
 # Track only these files in home directory
 !.bash_aliases
