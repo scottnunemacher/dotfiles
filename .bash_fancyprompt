@@ -4,48 +4,33 @@
 #========================================
 # .bash_fancyprompt
 #========================================
-# For reference: https://en.wikipedia.org/wiki/ANSI_escape_code#Escape_sequences
+# For reference: http://bashrcgenerator.com/
 
-RESET='\033[0m'             # color reset
+reset="\001$(tput sgr0)\002"
 
-# Original foreground color range: (8 colors)
-BLACK="\033[30m"            # foreground black
-RED="\033[31m"              # foreground red
-GREEN="\033[32m"            # foreground green
-YELLOW="\033[33m"           # foreground yellow
-BLUE="\033[34m"             # foreground blue
-MAGENTA="\033[35m"          # foreground magenta
-CYAN="\033[36m"             # foreground cyan
-WHITE="\033[37m"            # foreground white
+# Original color range: (8 colors)
+black="\001$(tput setaf 0)\002"     # black
+red="\001$(tput setaf 1)\002"       # red
+green="\001$(tput setaf 2)\002"     # green
+yellow="\001$(tput setaf 3)\002"    # yellow
+blue="\001$(tput setaf 4)\002"      # blue
+magenta="\001$(tput setaf 5)\002"   # magenta
+cyan="\001$(tput setaf 6)\002"      # cyan
+white="\001$(tput setaf 7)\002"     # white
 
-# Expanded foreground color range (216 colors)
-# only a few self-named colors are chosen and displayed here
-DKBLUE="\033[38;5;27m"      # foreground dark blue
-LIME="\033[38;5;40m"        # foreground lime
-PURPLE="\033[38;5;57m"      # foreground purple
-ORANGE="\033[38;5;208m"     # foreground orange
-
-# Check if root else reg user
+# Check if root
 if [[ ${EUID} == 0 ]] ; then
-    FRAME="${RED}";
-    COLORDATETIME="${RED}";
-    COLORWHO="${DKBLUE}";
-    COLORWHERE="${DKBLUE}";
-    COLORPWD="${LIME}";
-    PERMS="${RED} # ";
+    frame="$red";
 else
-    FRAME="${YELLOW}";
-    COLORDATETIME="${LIME}";
-    COLORWHO="${LIME}";
-    COLORWHERE="${LIME}";
-    COLORPWD="${LIME}";
-    PERMS="${LIME} $ ";
+    frame="$yellow";
 fi
 
-PS1="\n$FRAME\342\224\214\342\224\200\$(if [[ \$? == 0 ]]; then echo \"✅\"; else echo \"🔥\";fi)$FRAME\342\224\200[$COLORWHO\u$FRAME@$COLORWHERE\H$FRAME]\342\224\200[$COLORDATETIME\d \t$FRAME]\n\342\224\234\342\224\200[$COLORPWD\w$FRAME]\n\342\224\224\342\224\200>$PERMS$RESET"
+PS1="\n$frame┌─[$green\u@\h$frame]─[$green\t$frame]\n"  # ┌─[scott@server]─[14:23:52]
+PS1+="$frame├─[$green\w$frame]\n"                       # ├─[/usr/local/src] 
+PS1+="$frame└─[$green$?$frame]>$green \$$reset "       # └─[0]> $
 
-unset FRAME;
-
+export PS1
+unset frame red yellow green reset
 
 #========================================
 # Bash Git Prompt
