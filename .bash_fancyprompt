@@ -25,9 +25,9 @@ else
     frame="$yellow";
 fi
 
-PS1="\n$frame┌─[$green\u@\h$frame]─[$green\t$frame]\n"  # ┌─[scott@server]─[14:23:52]
-PS1+="$frame├─[$green\w$frame]\n"                       # ├─[/usr/local/src] 
-PS1+="$frame└─[$green$?$frame]>$green \$$reset "        # └─[0]> $
+PS1="\n$frame\342\224\214\─[$green\u@\h$frame]─[$green\t$frame]\n"  # ┌─[scott@server]─[14:23:52]
+PS1+="$frame\342\224\234─[$green\w$frame]\n"                        # ├─[/usr/local/src] 
+PS1+="$frame\342\224\224─[$green$?$frame]>$green \$$reset "         # └─[0]> $
 
 export PS1
 unset frame red yellow green reset
