@@ -18,6 +18,8 @@ magenta="\001$(tput setaf 5)\002"   # magenta
 cyan="\001$(tput setaf 6)\002"      # cyan
 white="\001$(tput setaf 7)\002"     # white
 
+frame="$yellow"
+
 # Check if root
 if [[ ${EUID} == 0 ]] ; then
     frame="$red";
