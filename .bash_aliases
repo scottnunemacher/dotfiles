@@ -110,7 +110,7 @@ alias bin='cd ~/bin/'
 
 # SYSTEM SHORTCUTS (if they exist).
 alias home='cd /home/' # !!! Change to the LITERAL /home/ directory.
-alias log='cd /var/log/'
+alias logs='cd /var/log/'
 alias www='cd /var/www/'
 alias html='cd /var/www/html/'
 alias fail2ban='cd /etc/fail2ban/'
