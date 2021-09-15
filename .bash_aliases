@@ -514,8 +514,8 @@ git-aliases() {
 # HISTORY
 #========================================
 # Disable history by uncommenting these two lines:
-# unset HISTFILE
-# HISTFILE=/dev/null
+unset HISTFILE
+HISTFILE=/dev/null
 
 
 #========================================
