@@ -306,6 +306,22 @@ journal-recent() {
 # View the complete list of users and any most recent login time
 # lastlog
 
+#-------------------------
+# Zombie Process
+# From: https://serverfault.com/a/1003281
+# Identify the zombie process:
+zombie-process() {
+  ps axo stat,ppid,pid,comm | grep -w defunct;
+}
+
+# Kill Zombie
+# From: https://serverfault.com/a/1003281
+# Kill the zombie parent process (the parent_process_number is the first [left] of the two numbers displayed.).
+# Use: 'kill-zombie 2405'
+kill-zombie() {
+  sudo kill -9 $1;
+}
+
 #========================================
 # SECURITY
 #========================================
