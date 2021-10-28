@@ -523,8 +523,20 @@ git-aliases() {
 # nano 50-default.conf
 
 #-------------------------
+# Show Reboot Log
+# Can be disabled/deleted if there isn't a script watching and recording reboots.
+show-reboot-log() {
+  cat /var/log/reboot.log
+}
+
+#-------------------------
 # 
 
+#-------------------------
+# 
+
+#-------------------------
+# 
 
 #========================================
 # HISTORY
