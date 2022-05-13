@@ -544,7 +544,7 @@ show-reboot-log() {
 # Disable history by uncommenting these two lines:
 unset HISTFILE
 HISTFILE=/dev/null
-
+#HISTTIMEFORMAT="%Y-%m-%d %T "
 
 #========================================
 # ADD ~/BIN TO PATH (IF ANY)
