@@ -239,8 +239,8 @@ macos-members() {
 
 #-------------------------
 # DISK USAGE
-# List size of current directory ONLY.
-list-size() {
+# List size summary of current directory ONLY.
+list-size-summary() {
   du -sh .
 }
 
