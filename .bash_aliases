@@ -244,6 +244,11 @@ list-size-summary() {
   du -sh .
 }
 
+# List size of current directory and children.
+list-size-family() {
+  du -sh *
+}
+
 # List count of files (inodes) in current directory recursively.
 list-count() {
   echo "Detailed Inode usage for: $(pwd)";
