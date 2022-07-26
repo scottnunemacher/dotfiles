@@ -59,7 +59,7 @@ alias mv='mv -i'
 alias ls='LANG=C ls --color=always'
 
 #List easier: (h)uman readable, (a)ll files, (l)ong format, directories-first.
-alias l='ls -hal --group-directories-first'
+alias l='ls -halv --group-directories-first'
 
 # List easier: (h)uman readable, (a)ll files, (l)ong format, (t)ime sorted, (r)eversed (oldest to newest).
 alias lrt='ls -haltr'
