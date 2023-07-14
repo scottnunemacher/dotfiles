@@ -237,6 +237,12 @@ macos-members() {
   done | grep "is a member" | cut -d " " -f 1;
 }
 
+# !!! MACOS ONLY !!!
+# a function to run the mac version of lsusb
+macos-lsusb() {
+  ioreg -p IOUSB -l -w 0
+}
+
 #-------------------------
 # DISK USAGE
 # List size summary of current directory ONLY.
